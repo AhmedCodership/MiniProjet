@@ -1,0 +1,57 @@
+﻿<!--
+	Données étudiants listées :
+		Id
+		Nom
+		Prénom
+		Groupe
+-->
+<liste_etudiants>
+	<etudiant>
+		<id>1</id>
+		<nom>Leponge</nom>
+		<prenom>Bob</prenom>
+		<groupe>A</groupe>
+	</etudiant>
+	<etudiant>
+		<id>2</id>
+		<nom>Sousmarin</nom>
+		<prenom>Patrick</prenom>
+		<groupe>A</groupe>
+	</etudiant>
+	<etudiant>
+		<id>3</id>
+		<nom>Fender</nom>
+		<prenom>léo</prenom>
+		<groupe>B</groupe>
+	</etudiant>
+	<etudiant>
+		<id>4</id>
+		<nom>Gibson</nom>
+		<prenom>John</prenom>
+		<groupe>B</groupe>
+	</etudiant>
+	<etudiant>
+		<id>5</id>
+		<nom>Vargas</nom>
+		<prenom>Anthonio</prenom>
+		<groupe>C</groupe>
+	</etudiant>
+	<etudiant>
+		<id>6</id>
+		<nom>Doe</nom>
+		<prenom>john</prenom>
+		<groupe>D</groupe>
+	</etudiant>
+	<etudiant>
+		<id>7</id>
+		<nom>Hiver</nom>
+		<prenom>froid</prenom>
+		<groupe>E</groupe>
+	</etudiant>
+	<etudiant>
+		<id>8</id>
+		<nom>Blanche</nom>
+		<prenom>Neige</prenom>
+		<groupe>E</groupe>
+	</etudiant>
+</liste_etudiants>
