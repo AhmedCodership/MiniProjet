@@ -82,7 +82,7 @@ public class CollectionEtudiant
 				Text prenom_text = (Text)(prenom.getFirstChild());
 				etudiant.setPrenom(prenom_text.getData().replaceAll("\n",""));
 	
-				// mise à jour du prénom de l'etudiant
+				// mise à jour du groupe de l'etudiant
 				Element groupe = (Element)(etu.getElementsByTagName("groupe").item(0));
 				Text groupe_text = (Text)(groupe.getFirstChild());
 				etudiant.setGroupe(groupe_text.getData().replaceAll("\n",""));

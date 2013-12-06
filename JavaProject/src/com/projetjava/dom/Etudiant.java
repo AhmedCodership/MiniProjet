@@ -60,7 +60,7 @@ public class Etudiant
 	@Override
 	public String toString()
 	{
-		return "Etudiant [id=" + id + ", nom=" + nom + ", prenom=" + prenom
+		return "Etudiant [id=" + this.id + ", nom=" + this.nom + ", prenom=" + this.prenom + ", groupe=" + this.groupe
 				+ "]";
 	}
 	
