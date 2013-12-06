@@ -1,5 +1,6 @@
 package com.projetjava.generatorHTML;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 
@@ -13,7 +14,7 @@ public class generator {
 	private String body;
 	private String title;
 	
-	public String getHTML(Collection c, Etudiant e) {
+	public String getHTML(ArrayList<Etudiant> c, Etudiant e) {
 		
 		if (e == null) {
 			
