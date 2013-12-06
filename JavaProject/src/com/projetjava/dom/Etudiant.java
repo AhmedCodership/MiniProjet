@@ -1,25 +1,28 @@
 package com.projetjava.dom;
 public class Etudiant
 {
-	private int id;
+	private String id;
 	
 	private String nom;
 	
 	private String prenom;
 	
+	private String groupe;
+	
 	public Etudiant()
 	{
-		this.id = 0;
+		this.id = null;
 		this.nom = null;
 		this.prenom = null;
+		this.groupe = null;
 	}
 
-	public int getId()
+	public String getId()
 	{
 		return id;
 	}
 
-	public void setId(int id)
+	public void setId(String id)
 	{
 		this.id = id;
 	}
@@ -42,6 +45,16 @@ public class Etudiant
 	public void setPrenom(String prenom)
 	{
 		this.prenom = prenom;
+	}
+
+	public String getGroupe()
+	{
+		return groupe;
+	}
+
+	public void setGroupe(String groupe)
+	{
+		this.groupe = groupe;
 	}
 
 	@Override

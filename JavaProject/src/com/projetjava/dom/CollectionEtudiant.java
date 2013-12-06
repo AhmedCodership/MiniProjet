@@ -64,28 +64,28 @@ public class CollectionEtudiant
 			{
 				Etudiant etudiant = new Etudiant();
 	
-				// obtenir l’élément livre suivant et avec cet élément :
+				// obtention de l'élément etudiant
+				Element etu = (Element) (etudiants.item(i));
 	
-				// mettre à jour le titre du livre
-				//Element etu = (Element) (livres.item(i));
-
-				//Element titre = (Element)(etudiants.getElementsByTagName("Titre").item(0));
-
-				//Text titre_text = (Text)(titre.getFirstChild());
-
-				//l.setTitre(titre_text.getData().replaceAll("\n",""));
+				// mise a jour de l'id de l'etudiant 
+				Element id = (Element)(etu.getElementsByTagName("id").item(0));
+				Text id_text = (Text)(id.getFirstChild());
+				etudiant.setId(id_text.getData().replaceAll("\n",""));
 	
-				// mettre à jour les auteurs du livre
+				// mise à jour du nom de l'etudiant
+				Element nom = (Element)(etu.getElementsByTagName("nom").item(0));
+				Text nom_text = (Text)(nom.getFirstChild());
+				etudiant.setNom(nom_text.getData().replaceAll("\n",""));
 	
-				// mettre à jour l’éditeur et l’ISBN du livre
+				// mise à jour du prénom de l'etudiant
+				Element prenom = (Element)(etu.getElementsByTagName("prenom").item(0));
+				Text prenom_text = (Text)(prenom.getFirstChild());
+				etudiant.setPrenom(prenom_text.getData().replaceAll("\n",""));
 	
-				// mettre à jour l’année de parution du livre
-	
-				// mettre à jour l’édition du livre
-	
-				// mettre à jour le nombre de pages du livre
-	
-				// mettre à jour la langue de rédaction du livre
+				// mise à jour du prénom de l'etudiant
+				Element groupe = (Element)(etu.getElementsByTagName("groupe").item(0));
+				Text groupe_text = (Text)(groupe.getFirstChild());
+				etudiant.setGroupe(groupe_text.getData().replaceAll("\n",""));
 	
 				this.listeEtudiant.add(etudiant);
 			}
