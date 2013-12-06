@@ -3,6 +3,8 @@ package com.projetjava.generatorHTML;
 import java.util.Collection;
 import java.util.Iterator;
 
+import com.projetjava.dom.Etudiant;
+
 public class generator {
 	
 	private String header;
@@ -11,38 +13,28 @@ public class generator {
 	private String body;
 	private String title;
 	
-	public String getHTML(String page,Collection c) {
+	public String getHTML(Collection c, Etudiant e) {
 		
-		if (page == "simple") {
+		if (e == null) {
 			
 			this.title = "<header><h3>LISTE D'ETUDIANTS</h3></header>";
 			
 			// Génération du corps en fonction de la requète http
 			this.body = "<body>" + this.title + "<section><br/><br/><table><tbody><tr><th>Etudiants</th></tr>";
-			Iterator<?> i = c.iterator();
+			Iterator<Etudiant> i = c.iterator();
 			while (i.hasNext()) // tant que j'ai un element non parcouru
 			{
-				Object o = i.next();
-				this.body += "<tr><td><a href=\"?id=" + o + "\" title=\"Détails\">" + o + "</a></td></tr>";//o.nom et o.id
+				Etudiant s = i.next();
+				this.body += "<tr><td><a href=\"?id=" + s.getId() + "\" title=\"Détails\">" + s.getNom() + "</a></td></tr>";
 			}
 		}
-		else if (page == "details") {
-			this.title = "<header><h3>LISTE DETAILLEE DE L'ETUDIANT: " + c + "</h3></header>";//c.nom etudiant
+		else {
+			
+			this.title = "<header><h3>LISTE DETAILLEE DE L'ETUDIANT: " + e.getPrenom() + " " + e.getNom() + "</h3></header>";
 		
 			// Génération du corps en fonction de la requète http
-			this.body = "<body>" + this.title + "<section><br/><br/><table><tbody><tr><th></th></tr>";
-			Iterator<?> i = c.iterator();
-			while (i.hasNext()) // tant que j'ai un element non parcouru
-			{
-				Object o = i.next();
-				this.body += "<tr><td></td></tr>";
-			}
-		}
-		else if (page == "add") {
-			this.title = "<header><h3>AJOUTER UN ETUDIANT</h3></header>";
-		}
-		else if (page == "delete") {
-			this.title = "<header><h3>SUPPRIMER UN ETUDIANT</h3></header>";
+			this.body = "<body>" + this.title + "<section><br/><br/><table><tbody><tr><th>Id</th><th>Prénom</th><th>Nom</th><th>Groupe</th></tr>";
+			this.body += "<tr><td>" + e.getId() + "</td><td>" + e.getPrenom() + "</td><td>" + e.getNom() + "</td><td>" + e.getGroupe() + "</td></tr>";
 		}
 				
 		this.header = "<!doctype html><html><head><meta charset=\"utf-8\"/><title>Liste d'étudiants</title>" + this.style + "</head>";
