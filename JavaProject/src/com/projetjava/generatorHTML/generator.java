@@ -1,4 +1,4 @@
-package generatorHTML;
+package com.projetjava.generatorHTML;
 
 import java.util.Collection;
 import java.util.Iterator;
