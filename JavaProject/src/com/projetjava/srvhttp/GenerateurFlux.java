@@ -5,10 +5,14 @@ import java.io.File;
 import java.io.FileInputStream;
 
 import com.projetjava.classes.HTTPInterpreter;
-import com.projetjava.generatorHTML.Generator;
-import com.projetjava.generatorHTML.generator;
+import com.projetjava.interpretor.Parser;
 
 public class GenerateurFlux implements HTTPInterpreter{
+	
+	//Ajout temporaire de Romain Gueffier
+	private Parser p;
+	
+	
 	
 	public void getParam(String rq){
 	
@@ -59,8 +63,7 @@ public class GenerateurFlux implements HTTPInterpreter{
 		 * Passer les objets en paramètres
 		 * Récupérer le String contenant le html en sortie du générateur
 		 */
-		Generator g = new Generator();
-		g.getHTML(null,null);
+		this.p = new Parser();
 		
 		return null;
 	}
