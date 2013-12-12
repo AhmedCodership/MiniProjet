@@ -1,4 +1,4 @@
-package com.projetjava.analyseSAX;
+package com.projetjava.interpretor;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -10,7 +10,7 @@ import org.xml.sax.helpers.XMLReaderFactory;
 import org.xml.sax.helpers.*;
 
 
-public class AnalyseDocument
+public class Interpretor
 {
 	public static void main(String args[])
 	{
@@ -33,7 +33,7 @@ public class AnalyseDocument
 			System.out.println(f.getAbsolutePath());
 			InputSource file = new InputSource(new FileInputStream(f));
 			
-			AffichageDocument doc = new AffichageDocument();
+			Parser doc = new Parser();
 			parser.setContentHandler(doc);
 			parser.parse(file);
 			System.out.println("Analyse du document terminée");

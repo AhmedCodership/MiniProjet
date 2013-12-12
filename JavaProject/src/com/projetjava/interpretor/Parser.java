@@ -1,10 +1,10 @@
-package com.projetjava.analyseSAX;
+package com.projetjava.interpretor;
 import org.xml.sax.Attributes;
 import org.xml.sax.Locator;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
-public class AffichageDocument extends DefaultHandler
+public class Parser extends DefaultHandler
 {
 	// Création d'un localisateur
 	private Locator loc;
