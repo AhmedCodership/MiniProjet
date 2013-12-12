@@ -5,7 +5,6 @@ import java.io.File;
 import java.io.FileInputStream;
 
 import com.projetjava.classes.HTTPInterpreter;
-import com.projetjava.generatorHTML.Generator;
 import com.projetjava.generatorHTML.generator;
 
 public class GenerateurFlux implements HTTPInterpreter{
@@ -31,9 +30,32 @@ public class GenerateurFlux implements HTTPInterpreter{
 				
 			}
 			
-			String param = rqOrig.substring(rqOrig.indexOf("?"),rqOrig.length()); // on choppe les parametres
-			param = param.substring(0,param.indexOf(" "));
-			System.out.println("Param : "+param+"\n"); // affichage contenu fichier
+			String listeParam = rqOrig.substring(rqOrig.indexOf("?"),rqOrig.length()); // on choppe les parametres
+			listeParam = listeParam.substring(1,listeParam.indexOf(" "));
+			System.out.println("listeParam : "+listeParam+"\n"); // affichage param
+			String parametreAction = "action=";
+			int action = listeParam.indexOf(parametreAction);
+			System.out.println("Recherche de "+parametreAction+" dans "+listeParam+"...");
+			if(action != -1){
+				System.out.println(parametreAction+" trouvé !");
+				String actionValue = listeParam.substring(listeParam.indexOf(parametreAction)+parametreAction.length(),listeParam.length()); // si le param action existe on supprime la partie "param="
+				System.out.println("Suppression du nom du parametre dans la chaine param ("+listeParam.indexOf(parametreAction)+parametreAction.length()+":"+listeParam.length()+") pour avoir la valeur...");
+				System.out.println("actionValue vaut maintenant : "+actionValue);
+				int autreParam = actionValue.indexOf("&");
+				if(autreParam == -1){
+					System.out.println("Autre parametre non trouvé...");
+					// si on trouve pas de &, la liste de param est terminée donc le param page = totalité de la chaine
+					System.out.println("Pas d'autre param, value : "+actionValue);
+				}
+				else{
+					System.out.println("Autre parametre trouvé !! ");
+					System.out.println("on tronque actionValue sur 0 à &");
+					actionValue = actionValue.substring(0,actionValue.indexOf("&")); // si on trouve &, la liste de param est pas terminée donc le param page = 0 à recherche &
+				}
+				System.out.println("value : "+actionValue+"\n\n\n");
+			}
+			//System.out.println(page); // affichage param
+			
 			
 			/*File f = new File(rq);
 					if (f.isFile()){ // bloc a remplacer par un appel de methode
@@ -59,8 +81,8 @@ public class GenerateurFlux implements HTTPInterpreter{
 		 * Passer les objets en paramètres
 		 * Récupérer le String contenant le html en sortie du générateur
 		 */
-		Generator g = new Generator();
-		g.getHTML(null,null);
+		//Generator g = new Generator();
+		//g.getHTML(null,null);
 		
 		return null;
 	}
