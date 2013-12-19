@@ -1,18 +1,9 @@
 package com.projetjava.srvhttp;
 
-import java.io.DataInputStream;
-import java.io.File;
-import java.io.FileInputStream;
 
 import HTML.HTML;
 
 import com.projetjava.classes.HTTPInterpreter;
-
-import com.projetjava.interpretor.Parser;
-
-import com.projetjava.interpretor.Parser;
-
-import com.projetjava.interpretor.Parser;
 
 public class GenerateurFlux implements HTTPInterpreter{
 	
@@ -104,44 +95,46 @@ public class GenerateurFlux implements HTTPInterpreter{
 			}
 			return paramValue;
 		}else{
-	@Override
-	public String getIndex() {
-		// TODO Auto-generated method stub
-		/* Appel de l'analyseur pour afficher la liste basique des �tudiants 
-		 * R�cup�ration des objets et appel de la fonction associ�es du generateurHTML
-		 * Passer les objets en param�tres
-		 * R�cup�rer le String contenant le html en sortie du g�n�rateur
-		 */
-		//Generator g = new Generator();
-		this.h = new HTML();
-		this.h.setTitle("Accueil - Liste d'étudiants");
-		this.h.setHeaderTable();
-		this.h.addHeaderTableField("Nom des étudiants");
-		this.h.setBodyTable();
-		this.h.addBodyTableField("Bob Léponge");
-		this.h.setBodyTable();
-		this.h.addBodyTableField("Bob Léponge");
-		this.h.setBodyTable();
-		this.h.addBodyTableField("Bob Léponge");
-		this.h.setBodyTable();
-		this.h.addBodyTableField("Bob Léponge");
-		this.h.setBodyTable();
-		this.h.addBodyTableField("Bob Léponge");
-		this.h.setBodyTable();
-		this.h.addBodyTableField("Bob Léponge");
-		this.h.setBodyTable();
-		this.h.addBodyTableField("Bob Léponge");
-		this.h.setBodyTable();
-		this.h.addBodyTableField("Bob Léponge");
-		this.h.setEndTable();
-		
-		return this.h.getHTML();
-	}
-		//g.getHTML(null,null);
-		
-		return null;
-	}
+			return "pas de ?";
+			
+		}
+	
 
+	}
+		
+		@Override
+		public String getIndex() {
+			// TODO Auto-generated method stub
+			/* Appel de l'analyseur pour afficher la liste basique des �tudiants 
+			 * R�cup�ration des objets et appel de la fonction associ�es du generateurHTML
+			 * Passer les objets en param�tres
+			 * R�cup�rer le String contenant le html en sortie du g�n�rateur
+			 */
+			//Generator g = new Generator();
+			this.h = new HTML();
+			this.h.setTitle("Accueil - Liste d'tudiants");
+			this.h.setHeaderTable();
+			this.h.addHeaderTableField("Nom des étudiants");
+			this.h.setBodyTable();
+			this.h.addBodyTableField("Bob Léponge");
+			this.h.setBodyTable();
+			this.h.addBodyTableField("Bob Léponge");
+			this.h.setBodyTable();
+			this.h.addBodyTableField("Bob Léponge");
+			this.h.setBodyTable();
+			this.h.addBodyTableField("Bob Léponge");
+			this.h.setBodyTable();
+			this.h.addBodyTableField("Bob Léponge");
+			this.h.setBodyTable();
+			this.h.addBodyTableField("Bob Léponge");
+			this.h.setBodyTable();
+			this.h.addBodyTableField("Bob Léponge");
+			this.h.setBodyTable();
+			this.h.addBodyTableField("Bob Léponge");
+			this.h.setEndTable();
+			
+			return this.h.getHTML();
+		}
 	@Override
 	public String getDetails(String param) {
 		// TODO Auto-generated method stub
