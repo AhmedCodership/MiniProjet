@@ -28,6 +28,9 @@ public class HTTPServerThread extends Thread{
 			// here
 			GenerateurFlux generateur = new GenerateurFlux();
 			generateur.getParam(rq);
+			String data = generateur.getIndex();
+			
+			this.s.getOutputStream().write(data.getBytes());
 			
 			
 			br.close();
@@ -41,4 +44,7 @@ public class HTTPServerThread extends Thread{
 			System.out.println("erreur IO");
 		}
 }
+
 }
+
+ 

@@ -6,7 +6,6 @@ import java.io.IOException;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
-import org.xml.sax.helpers.XMLReaderFactory;
 import org.xml.sax.helpers.*;
 
 
@@ -34,9 +33,11 @@ public class Interpretor
 			InputSource file = new InputSource(new FileInputStream(f));
 			
 			Parser doc = new Parser();
+			doc.setTitle("Index");
 			parser.setContentHandler(doc);
 			parser.parse(file);
 			System.out.println("Analyse du document terminée");
+			System.out.println(doc.getPageHtml());
 			
 		}
 		catch (SAXException e){

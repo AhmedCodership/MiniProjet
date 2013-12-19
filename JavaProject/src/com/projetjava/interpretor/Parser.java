@@ -1,8 +1,10 @@
 package com.projetjava.interpretor;
+
 import org.xml.sax.Attributes;
 import org.xml.sax.Locator;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
+import HTML.HTML;
 
 public class Parser extends DefaultHandler
 {
@@ -37,9 +39,9 @@ public class Parser extends DefaultHandler
 		{
 			System.out.print(" ( Attributs : ");
 			
-			for (int i = 0; i < l; i++) 
+			for (int i = 0; i < l; i++) {
 				System.out.print("{"+ attrs.getQName(i) + " : " + attrs.getValue(i)+"} ");
-			
+			}
 			System.out.print(")");
 		}
 		System.out.println();

@@ -4,9 +4,22 @@ import java.io.DataInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 
+import HTML.HTML;
+
 import com.projetjava.classes.HTTPInterpreter;
 
+import com.projetjava.interpretor.Parser;
+
+import com.projetjava.interpretor.Parser;
+
+import com.projetjava.interpretor.Parser;
+
 public class GenerateurFlux implements HTTPInterpreter{
+	
+	//Ajout temporaire de Romain Gueffier
+	private HTML h;
+	
+	
 	
 	public void getParam(String rq){
 	
@@ -38,7 +51,7 @@ public class GenerateurFlux implements HTTPInterpreter{
 			/*if(rq.length() == 0){
 				System.out.println("Taille de la chaine : "+rq.length());	// affichage pour debug
 				rq = getIndex();
-				System.out.println("Aucune page demandée, on envoie l'index.html");
+				System.out.println("Aucune page demandï¿½e, on envoie l'index.html");
 				
 			}*/
 			
@@ -48,7 +61,7 @@ public class GenerateurFlux implements HTTPInterpreter{
 			/*File f = new File(rq);
 					if (f.isFile()){ // bloc a remplacer par un appel de methode
 						DataInputStream dis = new DataInputStream(new FileInputStream(f));
-						System.out.println("Fichier balancé : "+f); // debug, voir quel nom de fichier on envoie
+						System.out.println("Fichier balancï¿½ : "+f); // debug, voir quel nom de fichier on envoie
 						byte[] data = new byte[(int) f.length()];
 						//System.out.println(data); // affichage du fichier en bytes 
 						dis.readFully(data); dis.close();
@@ -72,38 +85,51 @@ public class GenerateurFlux implements HTTPInterpreter{
 			System.out.println("Recherche de "+parametreARechercher+" dans "+listeParam+"...");
 			String paramValue = null;
 			if(action != -1){
-				System.out.println(parametreARechercher+" trouvé !");
+				System.out.println(parametreARechercher+" trouvï¿½ !");
 				paramValue = listeParam.substring(listeParam.indexOf(parametreARechercher)+parametreARechercher.length(),listeParam.length()); // si le param action existe on supprime la partie "param="
 				System.out.println("Suppression du nom du parametre dans la chaine param ("+listeParam.indexOf(parametreARechercher)+parametreARechercher.length()+":"+listeParam.length()+") pour avoir la valeur...");
 				System.out.println("paramValue vaut maintenant : "+paramValue);
 				int autreParam = paramValue.indexOf("&");
 				if(autreParam == -1){
-					System.out.println("Autre parametre non trouvé...");
-					// si on trouve pas de &, la liste de param est terminée donc le param page = totalité de la chaine
+					System.out.println("Autre parametre non trouvï¿½...");
+					// si on trouve pas de &, la liste de param est terminï¿½e donc le param page = totalitï¿½ de la chaine
 					System.out.println("Pas d'autre param, value : "+paramValue);
 				}
 				else{
-					System.out.println("Autre parametre trouvé !! ");
-					System.out.println("on tronque paramValue sur 0 à &");
-					paramValue = paramValue.substring(0,paramValue.indexOf("&")); // si on trouve &, la liste de param est pas terminée donc le param page = 0 à recherche &
+					System.out.println("Autre parametre trouvï¿½ !! ");
+					System.out.println("on tronque paramValue sur 0 ï¿½ &");
+					paramValue = paramValue.substring(0,paramValue.indexOf("&")); // si on trouve &, la liste de param est pas terminï¿½e donc le param page = 0 ï¿½ recherche &
 				}
 				System.out.println("value : "+paramValue+"\n\n\n");
 			}
 			return paramValue;
 		}else{
-			System.out.println("Pas de ?");
-			return "PAs de ?";
-		}
-	}
 	@Override
 	public String getIndex() {
 		// TODO Auto-generated method stub
-		/* Appel de l'analyseur pour afficher la liste basique des étudiants 
-		 * Récupération des objets et appel de la fonction associées du generateurHTML
-		 * Passer les objets en paramètres
-		 * Récupérer le String contenant le html en sortie du générateur
+		/* Appel de l'analyseur pour afficher la liste basique des ï¿½tudiants 
+		 * Rï¿½cupï¿½ration des objets et appel de la fonction associï¿½es du generateurHTML
+		 * Passer les objets en paramï¿½tres
+		 * Rï¿½cupï¿½rer le String contenant le html en sortie du gï¿½nï¿½rateur
 		 */
 		//Generator g = new Generator();
+		this.h = new HTML();
+		this.h.setTitle("Accueil - Liste d'ï¿½tudiants");
+		this.h.setHeaderTable();
+		this.h.addHeaderTableField("Nom des ï¿½tudiants");
+		this.h.setBodyTable();
+		this.h.addBodyTableField("Bob Lï¿½ponge");
+		this.h.addBodyTableField("Bob Lï¿½ponge");
+		this.h.addBodyTableField("Bob Lï¿½ponge");
+		this.h.addBodyTableField("Bob Lï¿½ponge");
+		this.h.addBodyTableField("Bob Lï¿½ponge");
+		this.h.addBodyTableField("Bob Lï¿½ponge");
+		this.h.addBodyTableField("Bob Lï¿½ponge");
+		this.h.addBodyTableField("Bob Lï¿½ponge");
+		this.h.setEndTable();
+		
+		return this.h.getHTML();
+	}
 		//g.getHTML(null,null);
 		
 		return null;
@@ -112,10 +138,10 @@ public class GenerateurFlux implements HTTPInterpreter{
 	@Override
 	public String getDetails(String param) {
 		// TODO Auto-generated method stub
-		/* Appel de l'analyseur pour afficher la liste détaillée d'un étudiant
-		 * Récupération des objets et appel de la fonction associées du generateurHTML
-		 * Passer les objets en paramètres
-		 * Récupérer le String contenant le html en sortie du générateur
+		/* Appel de l'analyseur pour afficher la liste dï¿½taillï¿½e d'un ï¿½tudiant
+		 * Rï¿½cupï¿½ration des objets et appel de la fonction associï¿½es du generateurHTML
+		 * Passer les objets en paramï¿½tres
+		 * Rï¿½cupï¿½rer le String contenant le html en sortie du gï¿½nï¿½rateur
 		 */
 		return null;
 	}
