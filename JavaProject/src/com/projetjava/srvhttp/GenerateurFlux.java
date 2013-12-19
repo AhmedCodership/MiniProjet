@@ -4,13 +4,15 @@ import java.io.DataInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 
+import HTML.HTML;
+
 import com.projetjava.classes.HTTPInterpreter;
 import com.projetjava.interpretor.Parser;
 
 public class GenerateurFlux implements HTTPInterpreter{
 	
 	//Ajout temporaire de Romain Gueffier
-	private Parser p;
+	private HTML h;
 	
 	
 	
@@ -63,9 +65,22 @@ public class GenerateurFlux implements HTTPInterpreter{
 		 * Passer les objets en paramètres
 		 * Récupérer le String contenant le html en sortie du générateur
 		 */
-		this.p = new Parser();
+		this.h = new HTML();
+		this.h.setTitle("Accueil - Liste d'étudiants");
+		this.h.setHeaderTable();
+		this.h.addHeaderTableField("Nom des étudiants");
+		this.h.setBodyTable();
+		this.h.addBodyTableField("Bob Léponge");
+		this.h.addBodyTableField("Bob Léponge");
+		this.h.addBodyTableField("Bob Léponge");
+		this.h.addBodyTableField("Bob Léponge");
+		this.h.addBodyTableField("Bob Léponge");
+		this.h.addBodyTableField("Bob Léponge");
+		this.h.addBodyTableField("Bob Léponge");
+		this.h.addBodyTableField("Bob Léponge");
+		this.h.setEndTable();
 		
-		return null;
+		return this.h.getHTML();
 	}
 
 	@Override
