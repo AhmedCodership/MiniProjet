@@ -114,18 +114,25 @@ public class GenerateurFlux implements HTTPInterpreter{
 		 */
 		//Generator g = new Generator();
 		this.h = new HTML();
-		this.h.setTitle("Accueil - Liste d'�tudiants");
+		this.h.setTitle("Accueil - Liste d'étudiants");
 		this.h.setHeaderTable();
-		this.h.addHeaderTableField("Nom des �tudiants");
+		this.h.addHeaderTableField("Nom des étudiants");
 		this.h.setBodyTable();
-		this.h.addBodyTableField("Bob L�ponge");
-		this.h.addBodyTableField("Bob L�ponge");
-		this.h.addBodyTableField("Bob L�ponge");
-		this.h.addBodyTableField("Bob L�ponge");
-		this.h.addBodyTableField("Bob L�ponge");
-		this.h.addBodyTableField("Bob L�ponge");
-		this.h.addBodyTableField("Bob L�ponge");
-		this.h.addBodyTableField("Bob L�ponge");
+		this.h.addBodyTableField("Bob Léponge");
+		this.h.setBodyTable();
+		this.h.addBodyTableField("Bob Léponge");
+		this.h.setBodyTable();
+		this.h.addBodyTableField("Bob Léponge");
+		this.h.setBodyTable();
+		this.h.addBodyTableField("Bob Léponge");
+		this.h.setBodyTable();
+		this.h.addBodyTableField("Bob Léponge");
+		this.h.setBodyTable();
+		this.h.addBodyTableField("Bob Léponge");
+		this.h.setBodyTable();
+		this.h.addBodyTableField("Bob Léponge");
+		this.h.setBodyTable();
+		this.h.addBodyTableField("Bob Léponge");
 		this.h.setEndTable();
 		
 		return this.h.getHTML();
